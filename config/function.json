@@ -1,0 +1,154 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployEnvironment": {
+            "type": "string"
+        },
+        "functionAppName": {
+            "type": "string"
+        },
+        "secretSource": {
+            "type": "string"
+        },
+        "keyVaultName": {
+            "type": "string"
+        },
+        "keyVaultSecretName": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the storage account you would like to create"
+            }
+        },
+        "azureServiceBusConnectionString": {
+            "type": "string"
+        },
+        "azureServiceBusRegisterUnknownDeviceQueueName": {
+            "type": "string"
+        },
+        "azureServiceBusIotHubRoutingQueueName": {
+            "type": "string"
+        },
+        "appServicePlanName": {
+            "type": "string",
+            "defaultValue": "appserviceplan"
+        },
+        "appServicePlanResourceGroup": {
+            "type": "string",
+            "defaultValue": "appserviceplan"
+        },
+        "functionsRuntime": {
+            "type": "string",
+            "allowedValues": [
+                "dotnet",
+                "node",
+                "java"
+            ],
+            "defaultValue": "dotnet"
+        }
+    },
+    "variables": {
+        "applicationInsightsName": "[concat('buhler-', parameters('deployEnvironment'), '-we-appins')]",
+        "applicationInsightsResourceGroup": "[concat('buhler-', parameters('deployEnvironment'), '-monitoring')]",
+        "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]",
+        "serverFarmId": "[resourceId(subscription().subscriptionId, parameters('appServicePlanResourceGroup'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[parameters('storageAccountName')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "[resourceGroup().location]",
+            "kind": "Storage",
+            "properties": {
+                "accountType": "Standard_LRS"
+            }
+        },
+        {
+            "apiVersion": "2016-03-01",
+            "type": "Microsoft.Web/sites",
+            "name": "[parameters('functionAppName')]",
+            "location": "[resourceGroup().location]",
+            "kind": "functionapp",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+            ],
+            "properties": {
+                "serverFarmId": "[variables('serverFarmId')]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(variables('storageAccountid'), '2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "Environment",
+                            "value": "[parameters('deployEnvironment')]"
+                        },
+                        {
+                            "name": "SecretSource",
+                            "value": "[parameters('secretSource')]"
+                        },
+                        {
+                            "name": "KeyVaultName",
+                            "value": "[parameters('keyVaultName')]"
+                        },
+                        {
+                            "name": "KeyVaultSecretName",
+                            "value": "[parameters('keyVaultSecretName')]"
+                        },
+                        {
+                            "name": "AzureServiceBusConnectionString",
+                            "value": "[parameters('azureServiceBusConnectionString')]"
+                        },
+                        {
+                            "name": "AzureServiceBusRegisterUnknownDeviceQueueName",
+                            "value": "[parameters('azureServiceBusRegisterUnknownDeviceQueueName')]"
+                        },
+                        {
+                            "name": "AzureServiceBusIotHubRoutingQueueName",
+                            "value": "[parameters('azureServiceBusIotHubRoutingQueueName')]"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~3"
+                        },
+                        {
+                            "name": "FUNCTIONS_V2_COMPATIBILITY_MODE",
+                            "value": "true"
+                        },
+                        {
+                            "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                            "value": "8.11.1"
+                        },
+                        {
+                            "name": "WEBSITE_RUN_FROM_PACKAGE",
+                            "value": "0"
+                        },
+                        {
+                            "name": "FUNCTIONS_WORKER_RUNTIME",
+                            "value": "[parameters('functionsRuntime')]"
+                        },
+                        {
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "[reference(resourceId(variables('applicationInsightsResourceGroup'), 'microsoft.insights/components/', variables('applicationInsightsName')), '2015-05-01').InstrumentationKey]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(variables('storageAccountid'), '2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTSHARE",
+                            "value": "[toLower(parameters('functionAppName'))]"
+                        }
+                    ],
+                    "alwaysOn": true
+                },
+                "clientAffinityEnabled": false
+            }
+        }
+    ]
+}

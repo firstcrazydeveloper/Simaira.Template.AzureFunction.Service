@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MetadataIntegrationService API",
+    "description": "Metadata IntegrationService API",
+    "contact": {
+      "name": "Team Avengers"
+    }
+  },
+  "paths": {
+    "/api/Item/{vendor}/{category}/{id}": {
+      "get": {
+        "tags": [
+          "ItemTag"
+        ],
+        "operationId": "GetItemsAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "vendor",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status200OK",
+            "schema": {
+              "$ref": "#/definitions/Void"
+            }
+          },
+          "401": {
+            "description": "Status401Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Void"
+            }
+          },
+          "403": {
+            "description": "Status403Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Void"
+            }
+          },
+          "404": {
+            "description": "Status404NotFound",
+            "schema": {
+              "$ref": "#/definitions/Void"
+            }
+          },
+          "500": {
+            "description": "Status500InternalServerError",
+            "schema": {
+              "$ref": "#/definitions/Void"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Void": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "apiKey",
+      "description": "Add authorization header using the JWT-Token (Bearer)"
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "tags": []
+}

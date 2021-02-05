@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli</AssemblyName>
+    <RootNamespace>SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.10.1" />
+    <PackageReference Include="SimairaDigital.CSharp.Coding.Guidelines" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimairaDigital.Backend.ItemManagement\SimairaDigital.Backend.ItemManagement.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet $(TargetPath) generateSwagger --swaggerFilePath $(ProjectDir)..\..\..\config\swagger.json &#xD;&#xA;dotnet $(TargetPath) generateClient --csFilePath $(ProjectDir)..\SimairaDigital.Backend.ItemManagement.Client\ItemManagementClient.Generated.cs" />
+  </Target>
+
+</Project>

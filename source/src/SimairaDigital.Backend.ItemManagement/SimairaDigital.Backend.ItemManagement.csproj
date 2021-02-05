@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="C:\Users\firstcrazydeveloper\.nuget\packages\aliencube.azurefunctions.extensions.openapi\3.1.1\contentFiles\any\netstandard2.0\OpenApi\IOpenApiHttpTriggerContext.cs" />
+    <Compile Remove="C:\Users\firstcrazydeveloper\.nuget\packages\aliencube.azurefunctions.extensions.openapi\3.1.1\contentFiles\any\netstandard2.0\OpenApi\OpenApiHttpTrigger.cs" />
+    <Compile Remove="C:\Users\firstcrazydeveloper\.nuget\packages\aliencube.azurefunctions.extensions.openapi\3.1.1\contentFiles\any\netstandard2.0\OpenApi\OpenApiHttpTriggerContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aliencube.AzureFunctions.Extensions.OpenApi" Version="3.1.1" />
+    <PackageReference Include="BH.Swashbuckle.AspNetCore.Swagger" Version="4.0.0" />
+    <PackageReference Include="Ensure.That" Version="9.2.0" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.13.1" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+    <PackageReference Include="SimairaDigital.CSharp.Coding.Guidelines" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore.AzureFunctions" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Infrastucture\" />
+  </ItemGroup>
+</Project>
