@@ -16,18 +16,21 @@
 
         string ServicePrincipalSecret { get; }
 
-        // Device Management parameters
-        Uri TopologyManagementUri { get; }
-
         Uri CosmosDatabaseEndpointUrl { get; }
-
-        Uri TelemetryUri { get; }
 
         string CosmosDatabaseAuthorizationKey { get; }
 
         string CosmosDatabaseId { get; }
 
         string ApplicationInsightsInstrumentationKey { get; }
+
+        string RedisConnectionString { get; }
+
+        bool UseCache { get; }
+
+        int RetryCount { get; }
+
+        int CachePageSize { get; }
 
         string HealthCheckAuthenticationToken { get; }
     }

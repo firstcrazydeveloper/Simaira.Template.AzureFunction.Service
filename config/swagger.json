@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "MetadataIntegrationService API",
-    "description": "Metadata IntegrationService API",
+    "title": "ItemManagement API",
+    "description": "ItemManagement API",
     "contact": {
-      "name": "Team Avengers"
+      "name": "First Crazy Developer"
     }
   },
   "paths": {

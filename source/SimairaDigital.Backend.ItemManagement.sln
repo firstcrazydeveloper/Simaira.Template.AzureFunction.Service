@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{58441F70-100
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{649FCB18-9DE5-49BC-A4BD-F86E7F462DFF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{1FF9591B-B9D1-4636-92A4-07A02815B878}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimairaDigital.Backend.ItemManagement", "src\SimairaDigital.Backend.ItemManagement\SimairaDigital.Backend.ItemManagement.csproj", "{C5F5FDAD-3920-4548-8FFE-56543B0BFBDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{E32BB524-98B3-4D6B-894E-12210DEC568F}"

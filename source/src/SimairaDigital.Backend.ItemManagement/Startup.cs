@@ -1,5 +1,5 @@
-﻿using SimairaDigital.Backend.ItemManagement;
-using Microsoft.Azure.WebJobs.Hosting;
+﻿using Microsoft.Azure.WebJobs.Hosting;
+using SimairaDigital.Backend.ItemManagement;
 
 #pragma warning disable S1200
 
@@ -9,10 +9,12 @@ namespace SimairaDigital.Backend.ItemManagement
 {
     using System;
     using System.Collections.Generic;
-    using SimairaDigital.Backend.ItemManagement.Api.Common;
     using Microsoft.Azure.WebJobs;
     using Microsoft.Azure.WebJobs.Hosting;
     using Microsoft.Extensions.DependencyInjection;
+    using SimairaDigital.Backend.ItemManagement.Api.Common;
+    using SimairaDigital.Backend.ItemManagement.Cache;
+    using StackExchange.Redis;
     using Swashbuckle.AspNetCore.AzureFunctions.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
 
@@ -30,7 +32,19 @@ namespace SimairaDigital.Backend.ItemManagement
         private void RegisterServices(IServiceCollection services)
         {
             services.AddSingleton<IAppConfiguration, AppConfiguration>();
-            services.AddSingleton<IUserAuthorization, UserAuthorization>();
+            services.AddScoped<IUserAuthorization, UserAuthorization>();
+            services.AddSingleton<IMemoryCacheManager, MemoryCacheManager>();
+            var config = services.BuildServiceProvider().GetRequiredService<IAppConfiguration>();
+            if (config.UseCache)
+            {
+                services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(config.RedisConnectionString));
+            }
+            else
+            {
+                services.AddSingleton<IConnectionMultiplexer, FakeMultiplexer>();
+            }
+
+            services.AddSingleton<IRedisCacheManager, RedisCacheManager>();
         }
 
         private void ConfigureSwagger(IServiceCollection services)
@@ -40,12 +54,12 @@ namespace SimairaDigital.Backend.ItemManagement
 
             var info = new Info
             {
-                Title = "MetadataIntegrationService API",
+                Title = "ItemManagement API",
                 Version = "1.0.0",
-                Description = "Metadata IntegrationService API",
+                Description = "ItemManagement API",
                 Contact = new Contact
                 {
-                    Name = "Team Avengers",
+                    Name = "First Crazy Developer",
                 },
             };
 
