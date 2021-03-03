@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli.CliOptions
+﻿namespace Simaira.Template.AzureFunction.Service.GenerateSwaggerCli.CliOptions
 {
     using System.Diagnostics.CodeAnalysis;
     using CommandLine;

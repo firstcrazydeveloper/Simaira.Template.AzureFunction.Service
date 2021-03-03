@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\SimairaDigital.Backend.ItemManagement\SimairaDigital.Backend.ItemManagement.csproj" />
+    <ProjectReference Include="..\..\src\Simaira.Template.AzureFunction.Service\Simaira.Template.AzureFunction.Service.csproj" />
   </ItemGroup>
 
 </Project>

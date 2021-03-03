@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{58441F70-100
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{649FCB18-9DE5-49BC-A4BD-F86E7F462DFF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimairaDigital.Backend.ItemManagement", "src\SimairaDigital.Backend.ItemManagement\SimairaDigital.Backend.ItemManagement.csproj", "{C5F5FDAD-3920-4548-8FFE-56543B0BFBDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simaira.Template.AzureFunction.Service", "src\Simaira.Template.AzureFunction.Service\Simaira.Template.AzureFunction.Service.csproj", "{C5F5FDAD-3920-4548-8FFE-56543B0BFBDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{E32BB524-98B3-4D6B-894E-12210DEC568F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{0FEAF808-1E3A-4780-BFEC-EF89ECB3C2EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimairaDigital.Backend.ItemManagement.Client", "src\SimairaDigital.Backend.ItemManagement.Client\SimairaDigital.Backend.ItemManagement.Client.csproj", "{12B0C14B-FFD3-472D-BD1E-DB7AD533DF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simaira.Template.AzureFunction.Service.Client", "src\Simaira.Template.AzureFunction.Service\Simaira.Template.AzureFunction.Service.Client.csproj", "{12B0C14B-FFD3-472D-BD1E-DB7AD533DF8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateSwaggerCli", "src\GenerateSwaggerCli\GenerateSwaggerCli.csproj", "{A46F99AA-030B-4D15-B2DF-E0A036B62D11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimairaDigital.Backend.ItemManagement.Tests", "tests\SimairaDigital.Backend.ItemManagement.Tests\SimairaDigital.Backend.ItemManagement.Tests.csproj", "{EB58B510-F861-4A33-8ED6-E9D603120A59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simaira.Template.AzureFunction.Service.Tests", "tests\Simaira.Template.AzureFunction.Service.Tests\Simaira.Template.AzureFunction.Service.Tests.csproj", "{EB58B510-F861-4A33-8ED6-E9D603120A59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

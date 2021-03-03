@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli
+﻿namespace Simaira.Template.AzureFunction.Service.GenerateSwaggerCli
 {
     using System;
     using System.Diagnostics.CodeAnalysis;

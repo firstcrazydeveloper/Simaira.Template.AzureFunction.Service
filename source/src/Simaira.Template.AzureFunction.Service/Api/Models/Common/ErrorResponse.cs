@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Api.Models.Common
+﻿namespace Simaira.Template.AzureFunction.Service.Api.Models.Common
 {
     using System.Collections.Generic;
     using System.Net;

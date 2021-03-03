@@ -1,8 +1,8 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Api.Common
+﻿namespace Simaira.Template.AzureFunction.Service.Api.Common
 {
     using System.Net.Http;
     using System.Threading.Tasks;
-    using SimairaDigital.Backend.ItemManagement.Api.Models.Common;
+    using Simaira.Template.AzureFunction.Service.Api.Models.Common;
 
     public interface IUserAuthorization
     {

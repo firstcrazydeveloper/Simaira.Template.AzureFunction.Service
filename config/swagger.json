@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "ItemManagement API",
-    "description": "ItemManagement API",
+    "title": "SimairaDigital AzureFunction API",
+    "description": "SimairaDigital AzureFunction API",
     "contact": {
       "name": "First Crazy Developer"
     }

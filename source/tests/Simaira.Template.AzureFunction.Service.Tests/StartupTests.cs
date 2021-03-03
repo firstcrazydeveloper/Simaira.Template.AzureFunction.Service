@@ -1,8 +1,9 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Tests
+﻿namespace Simaira.Template.AzureFunction.Service.Tests
 {
     using System;
     using Microsoft.Extensions.Hosting;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Simaira.Template.AzureFunction.Service;
     using Swashbuckle.AspNetCore.Swagger;
 
     [TestClass]

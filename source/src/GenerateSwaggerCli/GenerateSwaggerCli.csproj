@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli</AssemblyName>
-    <RootNamespace>SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli</RootNamespace>
+    <AssemblyName>Simaira.Template.AzureFunction.Service.GenerateSwaggerCli</AssemblyName>
+    <RootNamespace>Simaira.Template.AzureFunction.Service.GenerateSwaggerCli</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimairaDigital.Backend.ItemManagement\SimairaDigital.Backend.ItemManagement.csproj" />
+    <ProjectReference Include="..\Simaira.Template.AzureFunction.Service\Simaira.Template.AzureFunction.Service.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="dotnet $(TargetPath) generateSwagger --swaggerFilePath $(ProjectDir)..\..\..\config\swagger.json &#xD;&#xA;dotnet $(TargetPath) generateClient --csFilePath $(ProjectDir)..\SimairaDigital.Backend.ItemManagement.Client\ItemManagementClient.Generated.cs" />
+    <Exec Command="dotnet $(TargetPath) generateSwagger --swaggerFilePath $(ProjectDir)..\..\..\config\swagger.json &#xD;&#xA;dotnet $(TargetPath) generateClient --csFilePath $(ProjectDir)..\Simaira.Template.AzureFunction.Service.Client\AzureFunctionServiceClient.Generated.cs" />
   </Target>
 
 </Project>

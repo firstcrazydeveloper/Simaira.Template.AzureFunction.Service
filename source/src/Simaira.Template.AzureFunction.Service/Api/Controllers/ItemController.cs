@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Api.Controllers
+﻿namespace Simaira.Template.AzureFunction.Service.Api.Controllers
 {
     using System;
     using System.Net.Http;
@@ -8,7 +8,7 @@
     using Microsoft.Azure.WebJobs;
     using Microsoft.Azure.WebJobs.Extensions.Http;
     using Microsoft.Extensions.Logging;
-    using SimairaDigital.Backend.ItemManagement.Api.Common;
+    using Simaira.Template.AzureFunction.Service.Api.Common;
     using Swashbuckle.AspNetCore.Annotations;
 
     public class ItemController : ControllerBase

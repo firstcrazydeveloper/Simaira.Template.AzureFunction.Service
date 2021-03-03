@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Cache
+﻿namespace Simaira.Template.AzureFunction.Service.Cache
 {
     public interface IMemoryCacheManager
     {

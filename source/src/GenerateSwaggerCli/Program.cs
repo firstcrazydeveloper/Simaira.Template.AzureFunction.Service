@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli
+﻿namespace Simaira.Template.AzureFunction.Service.GenerateSwaggerCli
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
@@ -11,7 +11,7 @@
     using NSwag;
     using NSwag.CodeGeneration.CSharp;
     using NSwag.CodeGeneration.OperationNameGenerators;
-    using SimairaDigital.Backend.ItemManagement.GenerateSwaggerCli.CliOptions;
+    using Simaira.Template.AzureFunction.Service.GenerateSwaggerCli.CliOptions;
     using Swashbuckle.AspNetCore.Swagger;
 
     [ExcludeFromCodeCoverage]

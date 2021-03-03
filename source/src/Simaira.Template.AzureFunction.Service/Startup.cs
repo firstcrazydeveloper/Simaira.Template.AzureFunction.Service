@@ -1,19 +1,19 @@
 ﻿using Microsoft.Azure.WebJobs.Hosting;
-using SimairaDigital.Backend.ItemManagement;
+using Simaira.Template.AzureFunction.Service;
 
 #pragma warning disable S1200
 
 [assembly: WebJobsStartup(typeof(Startup))]
 
-namespace SimairaDigital.Backend.ItemManagement
+namespace Simaira.Template.AzureFunction.Service
 {
     using System;
     using System.Collections.Generic;
     using Microsoft.Azure.WebJobs;
     using Microsoft.Azure.WebJobs.Hosting;
     using Microsoft.Extensions.DependencyInjection;
-    using SimairaDigital.Backend.ItemManagement.Api.Common;
-    using SimairaDigital.Backend.ItemManagement.Cache;
+    using Simaira.Template.AzureFunction.Service.Api.Common;
+    using Simaira.Template.AzureFunction.Service.Cache;
     using StackExchange.Redis;
     using Swashbuckle.AspNetCore.AzureFunctions.Extensions;
     using Swashbuckle.AspNetCore.Swagger;
@@ -54,9 +54,9 @@ namespace SimairaDigital.Backend.ItemManagement
 
             var info = new Info
             {
-                Title = "ItemManagement API",
+                Title = "SimairaDigital AzureFunction API",
                 Version = "1.0.0",
-                Description = "ItemManagement API",
+                Description = "SimairaDigital AzureFunction API",
                 Contact = new Contact
                 {
                     Name = "First Crazy Developer",

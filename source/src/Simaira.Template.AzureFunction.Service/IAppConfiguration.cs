@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement
+﻿namespace Simaira.Template.AzureFunction.Service
 {
     using System;
 

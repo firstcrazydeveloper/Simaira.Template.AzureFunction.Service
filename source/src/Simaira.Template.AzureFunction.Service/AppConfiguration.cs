@@ -2,9 +2,9 @@
 using System.Runtime.CompilerServices;
 
 [assembly: CLSCompliant(false)]
-[assembly: InternalsVisibleTo("SimairaDigital.Backend.ItemManagement.Tests")]
+[assembly: InternalsVisibleTo("Simaira.Template.AzureFunction.Service.Tests")]
 
-namespace SimairaDigital.Backend.ItemManagement
+namespace Simaira.Template.AzureFunction.Service
 {
     using System;
 

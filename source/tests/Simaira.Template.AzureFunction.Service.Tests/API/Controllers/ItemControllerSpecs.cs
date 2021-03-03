@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Tests.API.Controllers
+﻿namespace Simaira.Template.AzureFunction.Service.Tests.API.Controllers
 {
     using System;
     using System.Net.Http;

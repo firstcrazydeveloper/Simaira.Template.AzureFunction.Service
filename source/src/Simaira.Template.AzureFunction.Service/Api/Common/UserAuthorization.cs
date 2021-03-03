@@ -1,4 +1,4 @@
-﻿namespace SimairaDigital.Backend.ItemManagement.Api.Common
+﻿namespace Simaira.Template.AzureFunction.Service.Api.Common
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +9,7 @@
     using EnsureThat;
     using Microsoft.AspNetCore.WebUtilities;
     using Microsoft.Extensions.Logging;
-    using SimairaDigital.Backend.ItemManagement.Api.Models.Common;
+    using Simaira.Template.AzureFunction.Service.Api.Models.Common;
 
     public class UserAuthorization : IUserAuthorization
     {
