@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{E32BB524
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{0FEAF808-1E3A-4780-BFEC-EF89ECB3C2EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simaira.Template.AzureFunction.Service.Client", "src\Simaira.Template.AzureFunction.Service\Simaira.Template.AzureFunction.Service.Client.csproj", "{12B0C14B-FFD3-472D-BD1E-DB7AD533DF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simaira.Template.AzureFunction.Service.Client", "src\Simaira.Template.AzureFunction.Service.Client\Simaira.Template.AzureFunction.Service.Client.csproj", "{12B0C14B-FFD3-472D-BD1E-DB7AD533DF8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateSwaggerCli", "src\GenerateSwaggerCli\GenerateSwaggerCli.csproj", "{A46F99AA-030B-4D15-B2DF-E0A036B62D11}"
 EndProject
